@@ -1,0 +1,28 @@
+Django
+Framework web de codigo abierto escrito en python
+
+MVC
+model - view - controller
+(BD)    (UI)    (Code)
+
+MTV (este usa django)
+Model - Template - View
+(BD)    (UI)        (code)
+
+Instalar python
+descargar desde web
+
+Instalar Django 
+pip install django
+
+Comandos
+
+Crear Proyecto
+django-admin startproject PingW
+
+Correr servidor
+python manage.py runserver
+
+Crear base de datos
+python manage.py migrate
+

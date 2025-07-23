@@ -26,3 +26,47 @@ python manage.py runserver
 Crear base de datos
 python manage.py migrate
 
+
+URLS
+
+from PingW.views import saludo, despedida, damefecha  
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('saludo/', saludo),
+    path('despedida/', despedida),
+    path('fecha/', damefecha),
+]
+
+VIEWS
+
+from django.http import HttpResponse
+import datetime
+
+def saludo(request):
+    return HttpResponse("¡Hola, mundo!")
+
+def despedida(request):
+    return HttpResponse("¡Adiós, mundo!")
+
+def damefecha(request):
+    fecha_actual=datetime.datetime.now()
+    documento=f"Fecha y hora actual: {fecha_actual}"
+    return HttpResponse(documento)
+
+Plantillas HTML
+cadenas de texto, html casi siempre
+
+Separa parte logica (codigo) de la visual (presentación)
+
+1. crear objeto tipo Template (ptl=Template(doc_externo.read))
+2. creacion de contexto (ctx=Context())
+3. renderizado del objeto template (documento=plt.render(ctx))
+
+def saludo(request):
+    doc_externo = open("C:/Users/JoseGuzmanChavarría/OneDrive - ETC/Documentos/Django Projects/PingW/PingW/Plantillas/saludo.html")
+    plt = Template(doc_externo.read())
+    doc_externo.close()
+    ctx = Context()
+    documento = plt.render(ctx) 
+    return HttpResponse(documento)

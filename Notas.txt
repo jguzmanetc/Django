@@ -70,3 +70,6 @@ def saludo(request):
     ctx = Context()
     documento = plt.render(ctx) 
     return HttpResponse(documento)
+
+
+    Actual Video 6
